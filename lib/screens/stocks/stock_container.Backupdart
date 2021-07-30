@@ -1,0 +1,99 @@
+import 'package:flutter/material.dart';
+
+import 'package:taranga_app/models/user_stocks.dart';
+import 'package:taranga_app/screens/stocks/stock_details.dart';
+
+class StockContainerBackup extends StatefulWidget {
+  final UserStock userStock;
+
+  const StockContainerBackup({
+    Key? key,
+    required this.userStock,
+  }) : super(key: key);
+
+  @override
+  _StockContainerState createState() => _StockContainerState();
+}
+
+class _StockContainerState extends State<StockContainerBackup> {
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => StockDetails()));
+      },
+      child: Container(
+        // margin: EdgeInsets.only(left: 12.0, right: 12.0),
+        height: 83,
+        width: MediaQuery.of(context).size.width,
+        child: Card(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              children: [
+                //stock name and symbol
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      widget.userStock.symbol,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                    Text(
+                      'Rs ${widget.userStock.lastTradedPrice.toInt()}',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 5),
+                //stock price
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Flexible(
+                      child: Text(
+                        widget.userStock.securityName,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ),
+                    Flexible(
+                      child: Container(
+                        alignment: Alignment.center,
+                        height: 25,
+                        width: 58,
+                        decoration: BoxDecoration(
+                          color: colorVal,
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                        child: Text(
+                          '$newChange %',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

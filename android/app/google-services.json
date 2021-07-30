@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1012297591710",
+    "project_id": "taranga-app",
+    "storage_bucket": "taranga-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012297591710:android:3e3ee20b7757ad9d5bc48f",
+        "android_client_info": {
+          "package_name": "com.example.taranga_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1012297591710-jvdv4s11v5jlo0gk1m0r2p5eav4tfitc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdQ53gasGcm-8ibixrCtA_BV7gie86SOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1012297591710-jvdv4s11v5jlo0gk1m0r2p5eav4tfitc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
